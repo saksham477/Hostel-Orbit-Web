@@ -1,0 +1,9 @@
+# Set proper MIME type for APK files
+AddType application/vnd.android.package-archive .apk
+
+# Add security headers
+<Files "*.apk">
+    Header set Content-Type "application/vnd.android.package-archive"
+    Header set Content-Disposition "attachment; filename=Hostel Orbit.apk"
+    Header set X-Content-Type-Options "nosniff"
+</Files>
