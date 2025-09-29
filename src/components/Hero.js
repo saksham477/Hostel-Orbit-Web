@@ -6,12 +6,15 @@ const Hero = () => {
   const [showDownloadButton, setShowDownloadButton] = useState(false);
   const [downloadLink, setDownloadLink] = useState('');
   const [downloadText, setDownloadText] = useState('');
+  const [showWarning, setShowWarning] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
 
   useEffect(() => {
     const ua = navigator.userAgent;
     setUserAgent(ua);
 
     if (/Android/i.test(ua)) {
+      setIsAndroid(true);
       setShowDownloadButton(true);
       setDownloadLink('/Hostel Orbit.apk'); // Direct download link
       setDownloadText('Download APK');
@@ -25,9 +28,20 @@ const Hero = () => {
   }, []);
 
   const handleDownload = () => {
-    if (downloadLink !== '#') {
+    if (isAndroid && downloadLink !== '#') {
+      setShowWarning(true);
+    } else if (downloadLink !== '#') {
       window.open(downloadLink, '_blank');
     }
+  };
+
+  const proceedWithDownload = () => {
+    setShowWarning(false);
+    window.open(downloadLink, '_blank');
+  };
+
+  const cancelDownload = () => {
+    setShowWarning(false);
   };
 
   return (
@@ -53,10 +67,6 @@ const Hero = () => {
                 <span className="btn-icon">📱</span>
                 {downloadText}
               </button>
-              <p className="download-note">
-                ⚠️ You may see a security warning. This is normal for APK downloads.
-                <br />Tap "Download anyway" to continue.
-              </p>
             </div>
           )}
 
@@ -90,6 +100,36 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Safety Warning Modal - Only shows on Android */}
+      {showWarning && (
+        <div className="warning-overlay">
+          <div className="warning-modal">
+            <div className="warning-header">
+              <div className="warning-icon">🛡️</div>
+              <h3>Safe Download</h3>
+            </div>
+            <div className="warning-content">
+              <p><strong>This file is safe and trusted.</strong></p>
+              <p>You may see a browser warning when downloading APK files. This is normal security behavior for Android apps downloaded outside the Play Store.</p>
+              <ul>
+                <li>✅ This APK is official and secure</li>
+                <li>✅ Developed by the Hostel Orbit team</li>
+                <li>✅ No malware or harmful content</li>
+              </ul>
+              <p className="warning-note">If prompted, tap "Download anyway" or "Keep file" to proceed.</p>
+            </div>
+            <div className="warning-actions">
+              <button className="warning-btn warning-btn-cancel" onClick={cancelDownload}>
+                Cancel
+              </button>
+              <button className="warning-btn warning-btn-proceed" onClick={proceedWithDownload}>
+                Download Safely
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

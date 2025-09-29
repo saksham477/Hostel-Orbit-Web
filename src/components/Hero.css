@@ -82,12 +82,155 @@
   margin: 2rem 0;
 }
 
-.download-note {
-  font-size: 0.85rem;
-  color: #6b7280;
-  text-align: center;
+/* Warning Modal Styles */
+.warning-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.warning-modal {
+  background: white;
+  border-radius: 1rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.warning-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.warning-icon {
+  font-size: 2rem;
+}
+
+.warning-header h3 {
   margin: 0;
-  line-height: 1.4;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.warning-content {
+  padding: 1.5rem 2rem;
+}
+
+.warning-content p {
+  margin: 0 0 1rem 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.warning-content p:first-child {
+  font-size: 1.1rem;
+  color: #059669;
+}
+
+.warning-content ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.warning-content li {
+  margin: 0.5rem 0;
+  color: #059669;
+  font-weight: 500;
+}
+
+.warning-note {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #3b82f6;
+  font-size: 0.9rem !important;
+  color: #374151 !important;
+}
+
+.warning-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+  justify-content: flex-end;
+}
+
+.warning-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.warning-btn-cancel {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.warning-btn-cancel:hover {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.warning-btn-proceed {
+  background: #059669;
+  color: white;
+}
+
+.warning-btn-proceed:hover {
+  background: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* Mobile responsiveness for modal */
+@media (max-width: 768px) {
+  .warning-modal {
+    margin: 1rem;
+    max-width: none;
+  }
+
+  .warning-header,
+  .warning-content,
+  .warning-actions {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .warning-actions {
+    flex-direction: column;
+  }
+
+  .warning-btn {
+    width: 100%;
+  }
 }
 
 .download-btn {
