@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,8 @@ const Footer = () => {
               <span className="logo-text">Hostel Orbit</span>
             </div>
             <p className="footer-description">
-              Professional hostel management solutions for Nepal's hospitality industry.
+              Professional hostel management solutions for Nepal's hospitality
+              industry.
             </p>
           </div>
 
@@ -23,7 +24,16 @@ const Footer = () => {
               <ul className="footer-list">
                 <li className="contact-item">
                   <span className="contact-icon">💬</span>
-                  <a href="https://wa.me/9779761805818" target="_blank" rel="noopener noreferrer" className="footer-link whatsapp-link">+977 976-180-5818<br />Chat on WhatsApp</a>
+                  <a
+                    href="https://wa.me/9779761805818"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link whatsapp-link"
+                  >
+                    +977 976-180-5818
+                    <br />
+                    Chat on WhatsApp
+                  </a>
                 </li>
                 <li className="contact-item">
                   <span className="contact-icon">📍</span>
@@ -37,11 +47,15 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              © {currentYear} Hostel Orbit. All rights reserved.
+              © {currentYear} Hostel Orbit. All rights reserved. V 1.1.13
             </p>
             <div className="footer-legal">
-              <a href="#" className="legal-link">Privacy Policy</a>
-              <a href="#" className="legal-link">Terms of Service</a>
+              <a href="#" className="legal-link">
+                Privacy Policy
+              </a>
+              <a href="#" className="legal-link">
+                Terms of Service
+              </a>
             </div>
           </div>
         </div>
