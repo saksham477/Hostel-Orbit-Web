@@ -20,7 +20,7 @@ const Hero = () => {
       setDownloadText('Download APK');
     } else if (/iPhone|iPad|iPod/i.test(ua)) {
       setShowDownloadButton(true);
-      setDownloadLink('#'); // Replace with your App Store link
+      setDownloadLink('https://apps.apple.com/us/app/hostel-orbit/id6751740636');
       setDownloadText('Download on App Store');
     } else {
       setShowDownloadButton(false);
