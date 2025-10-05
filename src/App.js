@@ -1,18 +1,33 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import AppPreview from './components/AppPreview';
 import About from './components/About';
 import Footer from './components/Footer';
+import DownloadPage from './components/DownloadPage';
 import './App.css';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
+    <>
       <Hero />
       <AppPreview />
       <About />
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/download" element={<DownloadPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

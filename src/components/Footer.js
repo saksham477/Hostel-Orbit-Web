@@ -47,7 +47,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              © {currentYear} Hostel Orbit. All rights reserved. V 1.1.13
+              © {currentYear} Hostel Orbit. All rights reserved. V 1.1.14
             </p>
             <div className="footer-legal">
               <a href="#" className="legal-link">
