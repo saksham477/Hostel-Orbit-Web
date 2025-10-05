@@ -82,7 +82,9 @@ const Hero = () => {
           {showDownloadButton && (
             <div className="download-section">
               <button className="download-btn" onClick={handleDownload}>
-                <span className="btn-icon">📱</span>
+                <svg className="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                </svg>
                 {downloadText}
               </button>
             </div>
@@ -140,7 +142,11 @@ const Hero = () => {
         <div className="warning-overlay">
           <div className="warning-modal">
             <div className="warning-header">
-              <div className="warning-icon">🛡️</div>
+              <div className="warning-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                </svg>
+              </div>
               <h3>Safe Download</h3>
             </div>
             <div className="warning-content">
@@ -153,9 +159,9 @@ const Hero = () => {
                 the Play Store.
               </p>
               <ul>
-                <li>✅ This APK is official and secure</li>
-                <li>✅ Developed by the Hostel Orbit team</li>
-                <li>✅ No malware or harmful content</li>
+                <li>This APK is official and secure</li>
+                <li>Developed by the Hostel Orbit team</li>
+                <li>No malware or harmful content</li>
               </ul>
               <p className="warning-note">
                 If prompted, tap "Download anyway" or "Keep file" to proceed.

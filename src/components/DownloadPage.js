@@ -39,7 +39,15 @@ const DownloadPage = () => {
       <div className="download-container">
         <div className="download-icon-wrapper">
           <div className="download-icon">
-            {downloadStarted ? "✅" : "⬇️"}
+            {downloadStarted ? (
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/>
+              </svg>
+            )}
           </div>
         </div>
 
@@ -80,7 +88,11 @@ const DownloadPage = () => {
               </li>
             </ol>
             <div className="security-note">
-              <div className="security-icon">🛡️</div>
+              <div className="security-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                </svg>
+              </div>
               <p>
                 <strong>This APK is safe and verified.</strong> The security
                 warning is standard for apps installed outside Google Play Store.
@@ -108,11 +120,16 @@ const DownloadPage = () => {
 
         <div className="download-actions">
           <button className="manual-download-btn" onClick={handleManualDownload}>
-            <span className="btn-icon">📱</span>
+            <svg className="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+            </svg>
             Retry Download
           </button>
           <a href="/" className="back-home-btn">
-            ← Back to Home
+            <svg className="back-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Back to Home
           </a>
         </div>
 

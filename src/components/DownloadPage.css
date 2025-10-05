@@ -35,8 +35,15 @@
 }
 
 .download-icon {
-  font-size: 80px;
+  width: 80px;
+  height: 80px;
+  color: #667eea;
   animation: bounce 1s ease-in-out infinite;
+}
+
+.download-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes bounce {
@@ -126,7 +133,15 @@
 }
 
 .security-icon {
-  font-size: 2rem;
+  width: 32px;
+  height: 32px;
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.security-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .security-note p {
@@ -169,7 +184,13 @@
 }
 
 .btn-icon {
-  font-size: 1.3rem;
+  width: 20px;
+  height: 20px;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .back-home-btn {
@@ -183,7 +204,9 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .back-home-btn:hover {
