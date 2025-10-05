@@ -4,7 +4,6 @@ import "./DownloadPage.css";
 
 const DownloadPage = () => {
   const location = useLocation();
-  const [countdown, setCountdown] = useState(5);
   const [downloadStarted, setDownloadStarted] = useState(false);
 
   const downloadLink = location.state?.downloadLink || "";
@@ -25,20 +24,6 @@ const DownloadPage = () => {
         setDownloadStarted(true);
       }, 1000);
     }
-
-    // Countdown timer for redirect
-    const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          window.location.href = "/";
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
   }, [downloadLink, isAndroid]);
 
   const handleManualDownload = () => {
@@ -131,11 +116,6 @@ const DownloadPage = () => {
           </a>
         </div>
 
-        <div className="redirect-notice">
-          <p>
-            Redirecting to homepage in <strong>{countdown}</strong> seconds...
-          </p>
-        </div>
       </div>
     </div>
   );
