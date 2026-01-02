@@ -181,7 +181,7 @@ const Footer = () => {
             © {currentYear} Hostel Orbit. All rights reserved.
           </div>
           <div className="pfooter__bottomRight">
-            <span className="pfooter__version">v1.1.18</span>
+            <span className="pfooter__version">v2.0.1</span>
           </div>
         </div>
       </div>
