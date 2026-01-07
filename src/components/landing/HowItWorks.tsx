@@ -2,33 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Building, Settings, Bell, ArrowRight } from "lucide-react";
+import { steps } from "../../data/data";
 
-const steps = [
-  {
-    number: "01",
-    icon: Building,
-    title: "Add hostel & rooms",
-    description:
-      "Set up your hostel profile, add rooms with details, and configure amenities. Takes just 5 minutes.",
-    color: "from-blue-500/20 to-blue-500/5",
-  },
-  {
-    number: "02",
-    icon: Settings,
-    title: "Manage students & expenses",
-    description:
-      "Add students, assign rooms, track payments, and log all expenses. Everything stays beautifully organized.",
-    color: "from-primary/20 to-primary/5",
-  },
-  {
-    number: "03",
-    icon: Bell,
-    title: "Notify, remind & handle outpass",
-    description:
-      "Send meal notifications, automated payment reminders, and process outpass requests digitally.",
-    color: "from-emerald-500/20 to-emerald-500/5",
-  },
-];
 
 const HowItWorks = () => {
   const ref = useRef(null);
@@ -81,7 +56,7 @@ const HowItWorks = () => {
                   initial={{ scale: 0.8 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: 0.3 + index * 0.15, type: "spring" }}
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg"
+                  className="absolute top-4 right-4 text-xs font-bold px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg"
                 >
                   Step {step.number}
                 </motion.span>

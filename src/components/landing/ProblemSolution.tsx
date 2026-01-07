@@ -2,20 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { X, Check, ArrowRight } from "lucide-react";
-
-const problems = [
-  "Tracking expenses manually in spreadsheets",
-  "Chasing students for overdue payments",
-  "Managing room availability on paper",
-  "No way to notify students instantly",
-];
-
-const solutions = [
-  "Automated expense tracking & reports",
-  "Smart payment reminders via app",
-  "Real-time room management dashboard",
-  "Instant meal & announcement notifications",
-];
+import { problems, solutions } from "../../data/data";
 
 const ProblemSolution = () => {
   const ref = useRef(null);

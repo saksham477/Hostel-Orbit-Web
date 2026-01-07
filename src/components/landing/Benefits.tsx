@@ -1,42 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Building2, Shield, Calculator, GraduationCap, ArrowUpRight } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Building2,
-    role: "Owner / Manager",
-    description:
-      "Complete visibility into operations, finances, and occupancy from anywhere. Make data-driven decisions with real-time insights.",
-    color: "from-primary/15 to-primary/5",
-    iconBg: "bg-primary/15",
-  },
-  {
-    icon: Shield,
-    role: "Warden",
-    description:
-      "Streamlined student management, instant outpass approvals, and real-time room status updates. Save hours every day.",
-    color: "from-blue-500/15 to-blue-500/5",
-    iconBg: "bg-blue-500/15",
-  },
-  {
-    icon: Calculator,
-    role: "Accountant",
-    description:
-      "Automated expense tracking, payment collection reports, and financial insights at your fingertips. No more spreadsheets.",
-    color: "from-emerald-500/15 to-emerald-500/5",
-    iconBg: "bg-emerald-500/15",
-  },
-  {
-    icon: GraduationCap,
-    role: "Students",
-    description:
-      "Easy room bookings, instant meal notifications, digital outpass requests, and transparent fee tracking. Campus life simplified.",
-    color: "from-orange-500/15 to-orange-500/5",
-    iconBg: "bg-orange-500/15",
-  },
-];
+import {  ArrowUpRight } from "lucide-react";
+import { benefits } from "../../data/data";
 
 const Benefits = () => {
   const ref = useRef(null);

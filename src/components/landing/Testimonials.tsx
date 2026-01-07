@@ -2,36 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    quote:
-      "Hostel Orbit transformed how we manage our 200-bed facility. What used to take hours now takes minutes. The ROI was immediate.",
-    author: "Rajesh Kumar",
-    role: "Hostel Owner",
-    location: "Chennai",
-    rating: 5,
-    image: "RK",
-  },
-  {
-    quote:
-      "The outpass feature alone saved us countless hours. Students love the transparency and speed. Parents appreciate the updates too.",
-    author: "Priya Sharma",
-    role: "Warden",
-    location: "Pune",
-    rating: 5,
-    image: "PS",
-  },
-  {
-    quote:
-      "Finally, an app that understands hostel operations. Clean interface, powerful features, responsive support. Highly recommended.",
-    author: "Mohammed Ali",
-    role: "Operations Manager",
-    location: "Hyderabad",
-    rating: 5,
-    image: "MA",
-  },
-];
+import { testimonials } from "../../data/data";
 
 const Testimonials = () => {
   const ref = useRef(null);

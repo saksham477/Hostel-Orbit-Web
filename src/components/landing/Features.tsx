@@ -1,62 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  Receipt,
-  DoorOpen,
-  Users,
-  Bell,
-  CreditCard,
-  Search,
-  FileText,
-  Building2,
-} from "lucide-react";
+import {  Building2, Users,} from "lucide-react";
+import {hostelFeatures, studentFeatures} from "../../data/data";
 
-const hostelFeatures = [
-  {
-    icon: Receipt,
-    title: "Expense Tracking",
-    description: "Track all hostel expenses, generate reports, and stay on top of finances effortlessly.",
-  },
-  {
-    icon: DoorOpen,
-    title: "Room Management",
-    description: "Manage room availability, allocations, and maintenance schedules with ease.",
-  },
-  {
-    icon: Users,
-    title: "Student Records",
-    description: "Store and access student information, documents, and history securely in one place.",
-  },
-  {
-    icon: CreditCard,
-    title: "Payment Reminders",
-    description: "Automated reminders for pending fees, reducing manual follow-up effort.",
-  },
-];
-
-const studentFeatures = [
-  {
-    icon: Bell,
-    title: "Meal Notifications",
-    description: "Get notified about meal timings, menu changes, and special dietary options.",
-  },
-  {
-    icon: Search,
-    title: "Hostel Search",
-    description: "Find and compare hostels based on location, amenities, reviews, and pricing.",
-  },
-  {
-    icon: FileText,
-    title: "Outpass Requests",
-    description: "Submit and track outpass requests digitally—no more paper forms or delays.",
-  },
-  {
-    icon: Building2,
-    title: "Room Booking",
-    description: "Browse available rooms and request allocations seamlessly through the app.",
-  },
-];
 
 const FeatureCard = ({ feature, index }: { feature: typeof hostelFeatures[0]; index: number }) => {
   const ref = useRef(null);
@@ -140,7 +87,7 @@ const Features = () => {
             <h3 className="text-heading text-foreground">For Students</h3>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {studentFeatures.map((feature, index) => (
+            {studentFeatures.map((feature:any, index:number) => (
               <FeatureCard key={feature.title} feature={feature} index={index + 4} />
             ))}
           </div>

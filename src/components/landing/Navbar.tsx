@@ -22,19 +22,43 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    // Close the menu first
+    setIsOpen(false);
+
+    // Wait for menu to close, then scroll to the target element
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Scroll to the target element with offset for fixed navbar
+        const navbarHeight = 80; // Height of the navbar
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 350); // Wait for menu close animation (300ms) + small buffer
+  };
+
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-2xl border-b border-border/50 shadow-sm" 
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? "bg-background/80 backdrop-blur-2xl border-b border-border/50 shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-18 md:h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
@@ -44,7 +68,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden min-[840px]:flex items-center gap-10">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} className="nav-link py-1">
                 {link.label}
@@ -52,22 +76,26 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <a href="#download" className="btn-primary text-sm py-2.5 px-5">
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-3">
+            {/* Download Button - Visible from 500px to full desktop */}
+            <a
+              href="#download"
+              className="btn-primary text-sm py-2.5 px-5 hidden min-[500px]:inline-flex"
+            >
               Download App
             </a>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2.5 text-foreground hover:bg-secondary rounded-xl transition-colors"
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile Menu Button - Hidden at 840px+ */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="min-[840px]:hidden p-2.5 text-foreground hover:bg-secondary rounded-xl transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -79,14 +107,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border overflow-hidden"
+            className="min-[840px]:hidden bg-background/95 backdrop-blur-2xl border-b border-border overflow-hidden"
           >
-            <div className="section-container py-6 flex flex-col gap-2">
+            <div className="section-container py-6 flex flex-col gap-3" style={{ height: "100vh" }}>
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleMobileNavClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -95,12 +123,13 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a 
-                href="#download" 
+              <motion.a
+                href="#download"
+                onClick={(e) => handleMobileNavClick(e, "#download")}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.05 }}
-                className="btn-primary text-center mt-4"
+                className="btn-primary text-center mt-4 max-[499px]:block hidden"
               >
                 Download App
               </motion.a>

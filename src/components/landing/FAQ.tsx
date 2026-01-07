@@ -7,39 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { faqs } from "../../data/data";
 
-const faqs = [
-  {
-    question: "How much does Hostel Orbit cost?",
-    answer:
-      "Hostel Orbit offers a free tier for small hostels (up to 20 rooms). For larger facilities, we have affordable monthly plans starting at ₹499/month. Contact us for enterprise pricing with custom features and dedicated support.",
-  },
-  {
-    question: "How long does it take to set up?",
-    answer:
-      "Most hostels are up and running within 5-10 minutes. Simply download the app, create your hostel profile, add rooms, and start inviting students. No technical expertise required—if you can use a smartphone, you can use Hostel Orbit.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Absolutely. We use bank-grade 256-bit encryption for all data in transit and at rest. Your information is stored on secure cloud servers with automated daily backups. We're GDPR compliant and never share your data with third parties.",
-  },
-  {
-    question: "How do meal notifications work?",
-    answer:
-      "Wardens or managers can schedule or send instant notifications about meals. Students receive push notifications on their phones with meal timings, menu details, or special dietary options. You can even automate recurring notifications.",
-  },
-  {
-    question: "Can students access the app independently?",
-    answer:
-      "Yes! Students download the same app and join their hostel using a unique code provided by the hostel. They can view their room details, submit outpass requests, track payments, and receive notifications—all without needing admin access.",
-  },
-  {
-    question: "What kind of support do you offer?",
-    answer:
-      "We offer 24/7 in-app chat support, email support (response within 4 hours), and phone support during business hours (9 AM - 9 PM IST). Enterprise plans include dedicated account managers and on-site training if needed.",
-  },
-];
 
 const FAQ = () => {
   const ref = useRef(null);
