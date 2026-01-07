@@ -1,121 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-:root {
-  --bg: #fbfbfa;
-  --card: rgba(255, 255, 255, 0.86);
-  --text: #0f172a;
-  --muted: rgba(15, 23, 42, 0.62);
-  --border: rgba(15, 23, 42, 0.12);
-
-  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 28px 90px rgba(0, 0, 0, 0.18);
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-.App {
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Gradient text (premium, not too loud) */
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    rgba(79, 70, 229, 1),
-    rgba(124, 58, 237, 1)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Global button system (used by Hero + Preview) */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 14px;
-  min-height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 850;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  transition: transform 160ms ease, box-shadow 160ms ease,
-    border-color 160ms ease;
-}
-
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2), var(--shadow-sm);
-  border-color: rgba(79, 70, 229, 0.28);
-}
-
-.btn--primary {
-  background: linear-gradient(
-    135deg,
-    rgba(79, 70, 229, 0.95),
-    rgba(124, 58, 237, 0.95)
-  );
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 18px 55px rgba(79, 70, 229, 0.25);
-}
-
-.btn--secondary {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.25);
-}
-
-.btn--ghost {
-  background: transparent;
-  border-color: rgba(15, 23, 42, 0.14);
-  box-shadow: none;
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(79, 70, 229, 0.25);
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  .btn--ghost:hover {
-    background: rgba(79, 70, 229, 0.06);
-    box-shadow: none;
-    transform: none;
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@media (hover: none) {
-  .btn:hover {
-    transform: none;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-@media (max-width: 520px) {
-  body {
-    font-size: 14px;
-  }
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
