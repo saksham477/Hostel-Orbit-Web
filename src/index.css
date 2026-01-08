@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,7 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 15% 8%;
 
-    --primary: 252 73% 58%;
+    /* Hostel Orbit Brand Blue (≈ #1E82F6) */
+    --primary: 212 92% 54%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 245 20% 97%;
@@ -25,39 +26,85 @@
     --muted: 245 15% 95%;
     --muted-foreground: 240 8% 50%;
 
-    --accent: 252 60% 96%;
-    --accent-foreground: 252 73% 45%;
+    /* Blue-tinted accent */
+    --accent: 212 70% 96%;
+    --accent-foreground: 212 92% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 240 10% 92%;
     --input: 240 10% 92%;
-    --ring: 252 73% 58%;
+    --ring: 212 92% 54%;
 
     --radius: 1rem;
 
-    /* Enhanced custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(252, 73%, 58%) 0%, hsl(280, 75%, 55%) 50%, hsl(320, 70%, 55%) 100%);
-    --gradient-primary-soft: linear-gradient(135deg, hsl(252, 73%, 58%, 0.12) 0%, hsl(280, 75%, 55%, 0.08) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(252, 60%, 98%) 0%, hsl(0, 0%, 100%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(245, 20%, 98%) 0%, hsl(0, 0%, 100%) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(252, 73%, 58%, 0.08) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(280, 75%, 55%, 0.06) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(252, 73%, 58%, 0.05) 0px, transparent 50%),
-                     radial-gradient(at 80% 50%, hsl(320, 70%, 55%, 0.04) 0px, transparent 50%),
-                     radial-gradient(at 0% 100%, hsl(252, 73%, 58%, 0.06) 0px, transparent 50%);
-    
+    /* Enhanced custom tokens (now blue-themed) */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(220 90% 48%) 100%
+    );
+    --gradient-primary-soft: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.12) 0%,
+      hsl(220 90% 48% / 0.08) 100%
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(212 60% 98%) 0%,
+      hsl(0 0% 100%) 100%
+    );
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(245 20% 98%) 0%,
+      hsl(0 0% 100%) 100%
+    );
+    --gradient-mesh: radial-gradient(
+        at 40% 20%,
+        hsl(var(--primary) / 0.08) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 80% 0%,
+        hsl(var(--primary) / 0.06) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 50%,
+        hsl(var(--primary) / 0.05) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 80% 50%,
+        hsl(var(--primary) / 0.04) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 100%,
+        hsl(var(--primary) / 0.06) 0px,
+        transparent 50%
+      );
+
     --shadow-xs: 0 1px 2px 0 hsl(240 10% 10% / 0.02);
-    --shadow-sm: 0 1px 3px 0 hsl(240 10% 10% / 0.04), 0 1px 2px -1px hsl(240 10% 10% / 0.02);
-    --shadow-md: 0 4px 6px -1px hsl(240 10% 10% / 0.05), 0 2px 4px -2px hsl(240 10% 10% / 0.03);
-    --shadow-lg: 0 10px 15px -3px hsl(240 10% 10% / 0.06), 0 4px 6px -4px hsl(240 10% 10% / 0.04);
-    --shadow-xl: 0 20px 25px -5px hsl(240 10% 10% / 0.08), 0 8px 10px -6px hsl(240 10% 10% / 0.04);
+    --shadow-sm: 0 1px 3px 0 hsl(240 10% 10% / 0.04),
+      0 1px 2px -1px hsl(240 10% 10% / 0.02);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 10% / 0.05),
+      0 2px 4px -2px hsl(240 10% 10% / 0.03);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 10% / 0.06),
+      0 4px 6px -4px hsl(240 10% 10% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(240 10% 10% / 0.08),
+      0 8px 10px -6px hsl(240 10% 10% / 0.04);
     --shadow-2xl: 0 25px 50px -12px hsl(240 10% 10% / 0.15);
-    --shadow-glow: 0 0 50px -12px hsl(252 73% 58% / 0.35);
-    --shadow-glow-lg: 0 0 80px -20px hsl(252 73% 58% / 0.5);
-    --shadow-card: 0 2px 8px -2px hsl(240 10% 10% / 0.04), 0 6px 20px -4px hsl(240 10% 10% / 0.06);
-    --shadow-card-hover: 0 4px 12px -2px hsl(240 10% 10% / 0.06), 0 12px 32px -8px hsl(240 10% 10% / 0.1);
+
+    /* Blue glow now follows brand */
+    --shadow-glow: 0 0 50px -12px hsl(var(--primary) / 0.35);
+    --shadow-glow-lg: 0 0 80px -20px hsl(var(--primary) / 0.5);
+
+    --shadow-card: 0 2px 8px -2px hsl(240 10% 10% / 0.04),
+      0 6px 20px -4px hsl(240 10% 10% / 0.06);
+    --shadow-card-hover: 0 4px 12px -2px hsl(240 10% 10% / 0.06),
+      0 12px 32px -8px hsl(240 10% 10% / 0.1);
   }
 
   .dark {
@@ -70,7 +117,8 @@
     --popover: 240 12% 9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 252 73% 65%;
+    /* Slightly brighter blue in dark mode */
+    --primary: 212 92% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 10% 12%;
@@ -79,15 +127,15 @@
     --muted: 240 10% 14%;
     --muted-foreground: 240 8% 60%;
 
-    --accent: 252 40% 18%;
-    --accent-foreground: 252 73% 75%;
+    --accent: 212 45% 18%;
+    --accent-foreground: 212 95% 75%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 240 10% 16%;
     --input: 240 10% 16%;
-    --ring: 252 73% 65%;
+    --ring: 212 92% 60%;
   }
 
   * {
@@ -127,9 +175,6 @@
   .section-container {
     @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
   }
-
-  
-
 
   .gradient-text {
     @apply bg-clip-text text-transparent;
@@ -192,7 +237,7 @@
   }
 
   .nav-link::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
     border-radius: 2px;
   }
@@ -218,7 +263,7 @@
   }
 
   .phone-mockup::before {
-    content: '';
+    content: "";
     @apply absolute inset-0 rounded-[3rem];
     background: var(--gradient-primary);
     opacity: 0.15;

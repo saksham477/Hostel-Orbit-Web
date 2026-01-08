@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Enhanced background */}
       <div className="absolute inset-0 mesh-gradient -z-10" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-b from-accent/50 to-transparent rounded-full blur-3xl -z-10 opacity-60" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-32 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl -z-10 animate-pulse" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/6 rounded-full blur-3xl -z-10" />
@@ -43,7 +43,7 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
@@ -52,19 +52,19 @@ const Hero = () => {
               Smarter hostel management.{" "}
               <span className="gradient-text">Happier students.</span>
             </motion.h1>
-
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
               className="text-lg md:text-body-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              The all-in-one app for hostel owners, wardens, and students. Track expenses, 
-              manage rooms, send notifications, and handle outpass requests—all from your phone.
+              The all-in-one app for hostel owners, wardens, and students. Track
+              expenses, manage rooms, send notifications, and handle outpass
+              requests—all from your phone.
             </motion.p>
 
             {/* Download Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
@@ -74,7 +74,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Trust Badges */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.7 }}
@@ -106,7 +106,7 @@ const Hero = () => {
               {/* Multiple glow layers */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-primary/15 to-transparent blur-[80px] rounded-full scale-110" />
               <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full animate-pulse" />
-              
+
               {/* Phone frame */}
               <div className="relative w-[280px] md:w-[300px] lg:w-[320px] aspect-[9/19] bg-foreground rounded-[3.5rem] p-[10px] shadow-2xl animate-float">
                 {/* Screen bezel */}
@@ -122,28 +122,210 @@ const Hero = () => {
                         <div className="w-6 h-3 bg-muted-foreground/60 rounded-sm" />
                       </div>
                     </div>
-                    
-                    {/* App content placeholder */}
-                    <div className="flex-1 flex flex-col items-center justify-center p-8">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mb-5 shadow-lg">
-                        <Smartphone className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <span className="text-sm font-semibold text-foreground mb-1">Hostel Orbit</span>
-                      <span className="text-xs text-muted-foreground text-center">Dashboard</span>
-                      
-                      {/* Mock UI elements */}
-                      <div className="w-full mt-8 space-y-3">
-                        <div className="h-10 bg-card rounded-xl w-full shadow-sm" />
-                        <div className="flex gap-2">
-                          <div className="h-20 bg-card rounded-xl flex-1 shadow-sm" />
-                          <div className="h-20 bg-card rounded-xl flex-1 shadow-sm" />
+
+                    {/* App top bar */}
+                    <div className="px-6 pt-3 pb-4">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <p className="text-[11px] font-semibold text-muted-foreground">
+                            Welcome back
+                          </p>
+                          <h3 className="text-sm font-bold text-foreground leading-tight">
+                            Orchid Boys Hostel
+                          </h3>
                         </div>
-                        <div className="h-24 bg-card rounded-xl w-full shadow-sm" />
+
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center">
+                            <span className="text-sm">🔔</span>
+                          </div>
+                          <div className="w-8 h-8 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center">
+                            <span className="text-sm">👤</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Active period pill */}
+                      <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/15 text-[11px] font-semibold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        Today • Live Updates
+                      </div>
+                    </div>
+
+                    {/* Quick stats */}
+                    <div className="px-6">
+                      <div className="grid grid-cols-3 gap-2.5">
+                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
+                          <p className="text-[10px] font-semibold text-muted-foreground">
+                            Students
+                          </p>
+                          <p className="text-base font-bold text-foreground leading-tight">
+                            48
+                          </p>
+                          <p className="text-[10px] text-muted-foreground mt-0.5">
+                            +2 this week
+                          </p>
+                        </div>
+
+                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
+                          <p className="text-[10px] font-semibold text-muted-foreground">
+                            Rooms
+                          </p>
+                          <p className="text-base font-bold text-foreground leading-tight">
+                            22
+                          </p>
+                          <p className="text-[10px] text-muted-foreground mt-0.5">
+                            3 available
+                          </p>
+                        </div>
+
+                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
+                          <p className="text-[10px] font-semibold text-muted-foreground">
+                            Fees Due
+                          </p>
+                          <p className="text-base font-bold text-foreground leading-tight">
+                            NPR 12k
+                          </p>
+                          <p className="text-[10px] text-muted-foreground mt-0.5">
+                            6 students
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Meal schedule card */}
+                    <div className="px-6 mt-3.5">
+                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3.5">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/15">
+                              <span className="text-sm">🍛</span>
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-foreground leading-tight">
+                                Today’s Meals
+                              </p>
+                              <p className="text-[11px] text-muted-foreground">
+                                Breakfast • Lunch • Dinner
+                              </p>
+                            </div>
+                          </div>
+                          <span className="text-[11px] font-semibold text-primary">
+                            View
+                          </span>
+                        </div>
+
+                        <div className="mt-3 grid grid-cols-3 gap-2">
+                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+                            <p className="text-[10px] font-semibold text-muted-foreground">
+                              Breakfast
+                            </p>
+                            <p className="text-[11px] font-bold text-foreground mt-0.5">
+                              7:30 AM
+                            </p>
+                          </div>
+                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+                            <p className="text-[10px] font-semibold text-muted-foreground">
+                              Lunch
+                            </p>
+                            <p className="text-[11px] font-bold text-foreground mt-0.5">
+                              12:30 PM
+                            </p>
+                          </div>
+                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+                            <p className="text-[10px] font-semibold text-muted-foreground">
+                              Dinner
+                            </p>
+                            <p className="text-[11px] font-bold text-foreground mt-0.5">
+                              7:30 PM
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Recent activity */}
+                    <div className="px-6 mt-3.5 mb-6">
+                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3.5">
+                        <div className="flex items-center justify-between">
+                          <p className="text-xs font-bold text-foreground">
+                            Recent Activity
+                          </p>
+                          <span className="text-[11px] font-semibold text-muted-foreground">
+                            See all
+                          </span>
+                        </div>
+
+                        <div className="mt-3 space-y-2.5">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
+                              <span className="text-sm">🚪</span>
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-[11px] font-semibold text-foreground leading-tight">
+                                Outpass approved
+                              </p>
+                              <p className="text-[10px] text-muted-foreground">
+                                Rm 203 • Sagar • 5 min ago
+                              </p>
+                            </div>
+                            <span className="text-[10px] font-semibold text-primary">
+                              Done
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-9 h-9 rounded-xl bg-secondary/70 border border-border/50 flex items-center justify-center">
+                              <span className="text-sm">📢</span>
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-[11px] font-semibold text-foreground leading-tight">
+                                Announcement posted
+                              </p>
+                              <p className="text-[10px] text-muted-foreground">
+                                “Fees due by 10th” • 22 min ago
+                              </p>
+                            </div>
+                            <span className="text-[10px] font-semibold text-muted-foreground">
+                              New
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom nav */}
+                    <div className="px-6 pb-5">
+                      <div className="bg-card/80 backdrop-blur border border-border/60 rounded-2xl shadow-sm px-4 py-3 flex items-center justify-between">
+                        <div className="flex flex-col items-center gap-1 text-primary">
+                          <span className="text-sm">🏠</span>
+                          <span className="text-[10px] font-semibold">
+                            Home
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
+                          <span className="text-sm">🧾</span>
+                          <span className="text-[10px] font-semibold">
+                            Fees
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
+                          <span className="text-sm">🍽️</span>
+                          <span className="text-[10px] font-semibold">
+                            Meals
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
+                          <span className="text-sm">🛎️</span>
+                          <span className="text-[10px] font-semibold">
+                            Outpass
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Dynamic island */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-foreground rounded-full flex items-center justify-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
@@ -151,26 +333,40 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <motion.div 
+              {/* Floating elements (keep yours) */}
+              <motion.div
                 animate={{ y: [-5, 5, -5], rotate: [-2, 2, -2] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -left-8 top-1/4 w-16 h-16 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
               >
                 <span className="text-2xl">🔔</span>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ y: [5, -5, 5], rotate: [2, -2, 2] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
                 className="absolute -right-6 top-1/3 w-14 h-14 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
               >
                 <span className="text-xl">💰</span>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ y: [-3, 7, -3], rotate: [-1, 3, -1] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
                 className="absolute -right-4 bottom-1/4 w-12 h-12 bg-card rounded-xl shadow-lg flex items-center justify-center border border-border/50"
               >
                 <span className="text-lg">🏠</span>

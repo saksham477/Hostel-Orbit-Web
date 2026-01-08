@@ -5,7 +5,7 @@ import { Sparkles, CheckCircle2 } from "lucide-react";
 import DownloadButtons from "./DownloadButtons";
 
 const benefits = [
-  "Free for hostels up to 20 rooms",
+  "One month free trial",
   "No credit card required",
   "Setup in under 5 minutes",
 ];
@@ -15,7 +15,11 @@ const FinalCTA = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="download" ref={ref} className="section-padding relative overflow-hidden">
+    <section
+      id="download"
+      ref={ref}
+      className="section-padding relative overflow-hidden"
+    >
       {/* Enhanced background */}
       <div className="absolute inset-0 mesh-gradient -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10" />
@@ -48,8 +52,8 @@ const FinalCTA = () => {
               Ready to modernize your hostel?
             </h2>
             <p className="text-muted-foreground text-body-lg md:text-xl max-w-xl mx-auto mb-10">
-              Join thousands of hostels already using Hostel Orbit. Download now and transform 
-              your operations in minutes.
+              Join thousands of hostels already using Hostel Orbit. Download now
+              and transform your operations in minutes.
             </p>
 
             <DownloadButtons className="justify-center mb-10" variant="large" />

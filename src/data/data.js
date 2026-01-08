@@ -10,7 +10,8 @@ import {
   Shield,
   Calculator,
   GraduationCap,
-Building, Settings,
+  Building,
+  Settings,
 } from "lucide-react";
 
 export const benefits = [
@@ -52,7 +53,7 @@ export const faqs = [
   {
     question: "How much does Hostel Orbit cost?",
     answer:
-      "Hostel Orbit offers a free tier for small hostels (up to 20 rooms). For larger facilities, we have affordable monthly plans starting at ₹499/month. Contact us for enterprise pricing with custom features and dedicated support.",
+      "Hostel Orbit includes a 1-month free plan (trial). After the free month, the subscription is NPR 6,000 per hostel per year.",
   },
   {
     question: "How long does it take to set up?",
@@ -67,7 +68,7 @@ export const faqs = [
   {
     question: "How do meal notifications work?",
     answer:
-      "Wardens or managers can schedule or send instant notifications about meals. Students receive push notifications on their phones with meal timings, menu details, or special dietary options. You can even automate recurring notifications.",
+      "Wardens or managers can schedule or send instant notifications about meals. Students receive push notifications on their phones with meal timings, menu details, or special dietary options.",
   },
   {
     question: "Can students access the app independently?",
@@ -77,7 +78,7 @@ export const faqs = [
   {
     question: "What kind of support do you offer?",
     answer:
-      "We offer 24/7 in-app chat support, email support (response within 4 hours), and phone support during business hours (9 AM - 9 PM IST). Enterprise plans include dedicated account managers and on-site training if needed.",
+      "We offer 24/7 in-app chat support, email support (response within 4 hours), and phone support during business hours. Enterprise plans include dedicated account managers and on-site training if needed.",
   },
 ];
 
@@ -85,22 +86,26 @@ export const hostelFeatures = [
   {
     icon: Receipt,
     title: "Expense Tracking",
-    description: "Track all hostel expenses, generate reports, and stay on top of finances effortlessly.",
+    description:
+      "Track all hostel expenses, generate reports, and stay on top of finances effortlessly.",
   },
   {
     icon: DoorOpen,
     title: "Room Management",
-    description: "Manage room availability, allocations, and maintenance schedules with ease.",
+    description:
+      "Manage room availability, allocations, and maintenance schedules with ease.",
   },
   {
     icon: Users,
     title: "Student Records",
-    description: "Store and access student information, documents, and history securely in one place.",
+    description:
+      "Store and access student information, documents, and history securely in one place.",
   },
   {
     icon: CreditCard,
     title: "Payment Reminders",
-    description: "Automated reminders for pending fees, reducing manual follow-up effort.",
+    description:
+      "Automated reminders for pending fees, reducing manual follow-up effort.",
   },
 ];
 
@@ -108,22 +113,26 @@ export const studentFeatures = [
   {
     icon: Bell,
     title: "Meal Notifications",
-    description: "Get notified about meal timings, menu changes, and special dietary options.",
+    description:
+      "Get notified about meal timings, menu changes, and special dietary options.",
   },
   {
     icon: Search,
     title: "Hostel Search",
-    description: "Find and compare hostels based on location, amenities, reviews, and pricing.",
+    description:
+      "Find and compare hostels based on location, amenities, reviews, and pricing.",
   },
   {
     icon: FileText,
     title: "Outpass Requests",
-    description: "Submit and track outpass requests digitally—no more paper forms or delays.",
+    description:
+      "Submit and track outpass requests digitally—no more paper forms or delays.",
   },
   {
     icon: Building2,
     title: "Room Booking",
-    description: "Browse available rooms and request allocations seamlessly through the app.",
+    description:
+      "Browse available rooms and request allocations seamlessly through the app.",
   },
 ];
 
@@ -172,27 +181,27 @@ export const testimonials = [
   {
     quote:
       "Hostel Orbit transformed how we manage our 200-bed facility. What used to take hours now takes minutes. The ROI was immediate.",
-    author: "Rajesh Kumar",
+    author: "Sunil Chettri",
     role: "Hostel Owner",
-    location: "Chennai",
+    location: "Sinamangal",
     rating: 5,
     image: "RK",
   },
   {
     quote:
       "The outpass feature alone saved us countless hours. Students love the transparency and speed. Parents appreciate the updates too.",
-    author: "Priya Sharma",
+    author: "Bibek Paudel",
     role: "Warden",
-    location: "Pune",
+    location: "Baneshwor",
     rating: 5,
     image: "PS",
   },
   {
     quote:
       "Finally, an app that understands hostel operations. Clean interface, powerful features, responsive support. Highly recommended.",
-    author: "Mohammed Ali",
+    author: "Nripesh Baraghare",
     role: "Operations Manager",
-    location: "Hyderabad",
+    location: "Tinkune",
     rating: 5,
     image: "MA",
   },

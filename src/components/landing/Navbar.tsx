@@ -22,7 +22,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleMobileNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
 
     // Close the menu first
@@ -30,18 +33,19 @@ const Navbar = () => {
 
     // Wait for menu to close, then scroll to the target element
     setTimeout(() => {
-      const targetId = href.replace('#', '');
+      const targetId = href.replace("#", "");
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
         // Scroll to the target element with offset for fixed navbar
         const navbarHeight = 80; // Height of the navbar
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - navbarHeight;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     }, 350); // Wait for menu close animation (300ms) + small buffer
@@ -52,19 +56,24 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? "bg-background/80 backdrop-blur-2xl border-b border-border/50 shadow-sm"
-        : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-2xl border-b border-border/50 shadow-sm"
+          : "bg-transparent"
+      }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-              <Orbit className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-lg text-foreground tracking-tight">Hostel Orbit</span>
+            <img
+              src="/Logo.png"
+              alt="Hostel Orbit"
+              className="w-10 h-10 rounded-xl object-contain shadow-md group-hover:shadow-lg transition-shadow duration-300"
+            />
+            <span className="font-bold text-lg text-foreground tracking-tight">
+              Hostel Orbit
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -93,7 +102,11 @@ const Navbar = () => {
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -109,7 +122,10 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="min-[840px]:hidden bg-background/95 backdrop-blur-2xl border-b border-border overflow-hidden"
           >
-            <div className="section-container py-6 flex flex-col gap-3" style={{ height: "100vh" }}>
+            <div
+              className="section-container py-6 flex flex-col gap-3"
+              style={{ height: "100vh" }}
+            >
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
