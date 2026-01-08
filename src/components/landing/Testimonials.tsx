@@ -22,10 +22,11 @@ const Testimonials = () => {
         >
           <span className="section-badge mb-5">Testimonials</span>
           <h2 className="text-heading-xl md:text-display text-foreground mb-5 text-balance">
-            Trusted by hostel managers across India
+            Trusted by hostel managers across Nepal
           </h2>
           <p className="text-muted-foreground text-body-lg max-w-2xl mx-auto">
-            Join thousands of hostels already using Hostel Orbit to streamline their operations.
+            Join thousands of hostels already using Hostel Orbit to streamline
+            their operations.
           </p>
         </motion.div>
 
@@ -35,7 +36,11 @@ const Testimonials = () => {
               key={testimonial.author}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="glass-card p-8 relative group hover:border-primary/20 transition-all duration-500"
             >
               {/* Quote icon */}
@@ -59,7 +64,9 @@ const Testimonials = () => {
                   {testimonial.image}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
+                  <p className="font-semibold text-foreground">
+                    {testimonial.author}
+                  </p>
                   <p className="text-muted-foreground text-sm">
                     {testimonial.role}, {testimonial.location}
                   </p>
