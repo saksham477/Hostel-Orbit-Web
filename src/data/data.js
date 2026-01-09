@@ -53,7 +53,7 @@ export const faqs = [
   {
     question: "How much does Hostel Orbit cost?",
     answer:
-      "Hostel Orbit includes a 1-month free plan (trial). After the free month, the subscription is NPR 6,000 per hostel per year.",
+      "Hostel Orbit includes a 1-month free plan (trial). After the free month, the subscription is NPR 6,000 per hostel per year as of the launch offer.",
   },
   {
     question: "How long does it take to set up?",

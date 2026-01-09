@@ -1,4 +1,4 @@
-import { Apple, Play } from "lucide-react";
+import { Apple, Download } from "lucide-react";
 
 interface DownloadButtonsProps {
   className?: string;
@@ -20,21 +20,21 @@ const DownloadButtons = ({
         target="_blank"
         rel="noopener noreferrer"
         className={`btn-primary group ${isLarge ? "px-8 py-4" : ""}`}
-        aria-label="Download"
+        aria-label="Download for Android (APK)"
       >
-        <Play className={`fill-current ${isLarge ? "w-6 h-6" : "w-5 h-5"}`} />
+        <Download className={isLarge ? "w-6 h-6" : "w-5 h-5"} />
         <div className="text-left">
           <div
             className={`opacity-80 font-medium ${
               isLarge ? "text-xs" : "text-[11px]"
             }`}
           >
-            Download
+            Download for
           </div>
           <div
             className={`font-bold -mt-0.5 ${isLarge ? "text-base" : "text-sm"}`}
           >
-            Now
+            Android
           </div>
         </div>
       </a>
