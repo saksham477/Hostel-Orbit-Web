@@ -1,5 +1,17 @@
 import { motion } from "framer-motion";
-import { Smartphone, Shield, Zap, CheckCircle2, Sparkles } from "lucide-react";
+import {
+  Shield,
+  Zap,
+  CheckCircle2,
+  Sparkles,
+  Bell,
+  User2,
+  Users,
+  UtensilsCrossed,
+  Receipt,
+  ClipboardList,
+  Home,
+} from "lucide-react";
 import DownloadButtons from "./DownloadButtons";
 
 const trustBadges = [
@@ -52,6 +64,7 @@ const Hero = () => {
               Smarter hostel management.{" "}
               <span className="gradient-text">Happier students.</span>
             </motion.h1>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -110,145 +123,210 @@ const Hero = () => {
               {/* Phone frame */}
               <div className="relative w-[280px] md:w-[300px] lg:w-[320px] aspect-[9/19] bg-foreground rounded-[3.5rem] p-[10px] shadow-2xl animate-float">
                 {/* Screen bezel */}
-                <div className="w-full h-full bg-card rounded-[2.75rem] overflow-hidden border border-border/30">
+                <div className="w-full h-full bg-card rounded-[2.75rem] overflow-hidden border border-border/30 relative">
                   {/* Screen content */}
-                  <div className="w-full h-full bg-gradient-to-br from-accent via-secondary to-accent flex flex-col">
-                    {/* Status bar */}
-                    <div className="flex items-center justify-between px-6 py-3 text-xs font-medium text-muted-foreground">
+                  <div className="w-full h-full flex flex-col bg-gradient-to-b from-accent via-secondary to-accent">
+                    {/* Status bar (cleaner + more realistic) */}
+                    <div className="flex items-center justify-between px-6 pt-3 pb-2 text-[11px] font-semibold text-muted-foreground">
                       <span>9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="w-4 h-2 bg-muted-foreground/50 rounded-sm" />
-                        <div className="w-4 h-2 bg-muted-foreground/50 rounded-sm" />
-                        <div className="w-6 h-3 bg-muted-foreground/60 rounded-sm" />
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-4 h-2 rounded-sm bg-muted-foreground/40" />
+                        <div className="w-4 h-2 rounded-sm bg-muted-foreground/40" />
+                        <div className="w-6 h-3 rounded-sm bg-muted-foreground/50" />
                       </div>
                     </div>
 
-                    {/* App top bar */}
-                    <div className="px-6 pt-3 pb-4">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <p className="text-[11px] font-semibold text-muted-foreground">
-                            Welcome back
-                          </p>
-                          <h3 className="text-sm font-bold text-foreground leading-tight">
-                            Orchid Boys Hostel
-                          </h3>
+                    {/* App header */}
+                    <div className="px-6 pt-2 pb-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-2xl bg-primary/12 border border-primary/20 shadow-sm flex items-center justify-center">
+                            <span className="text-[12px] font-black text-primary">
+                              HO
+                            </span>
+                          </div>
+
+                          <div className="leading-tight">
+                            <p className="text-[11px] font-semibold text-muted-foreground">
+                              Hostel Dashboard
+                            </p>
+                            <h3 className="text-sm font-extrabold text-foreground">
+                              Orchid Boys Hostel
+                            </h3>
+                          </div>
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center">
-                            <span className="text-sm">🔔</span>
-                          </div>
-                          <div className="w-8 h-8 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center">
-                            <span className="text-sm">👤</span>
-                          </div>
+                          <button
+                            type="button"
+                            className="relative w-9 h-9 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center"
+                            aria-label="Notifications"
+                          >
+                            <Bell className="w-4 h-4 text-foreground" />
+                            <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary" />
+                          </button>
+                          <button
+                            type="button"
+                            className="w-9 h-9 rounded-xl bg-card border border-border/60 shadow-sm flex items-center justify-center"
+                            aria-label="Profile"
+                          >
+                            <User2 className="w-4 h-4 text-foreground" />
+                          </button>
                         </div>
                       </div>
 
-                      {/* Active period pill */}
-                      <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/15 text-[11px] font-semibold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        Today • Live Updates
+                      <div className="mt-3 flex items-center justify-between">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/15 text-[11px] font-semibold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          Today • Live
+                        </div>
+
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/70 backdrop-blur border border-border/60 text-[11px] font-semibold text-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          Approved
+                        </div>
                       </div>
                     </div>
 
-                    {/* Quick stats */}
+                    {/* Quick actions (more app-like) */}
                     <div className="px-6">
                       <div className="grid grid-cols-3 gap-2.5">
-                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
-                          <p className="text-[10px] font-semibold text-muted-foreground">
-                            Students
-                          </p>
-                          <p className="text-base font-bold text-foreground leading-tight">
-                            48
-                          </p>
-                          <p className="text-[10px] text-muted-foreground mt-0.5">
-                            +2 this week
-                          </p>
-                        </div>
-
-                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
-                          <p className="text-[10px] font-semibold text-muted-foreground">
-                            Rooms
-                          </p>
-                          <p className="text-base font-bold text-foreground leading-tight">
-                            22
-                          </p>
-                          <p className="text-[10px] text-muted-foreground mt-0.5">
-                            3 available
-                          </p>
-                        </div>
-
-                        <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3">
-                          <p className="text-[10px] font-semibold text-muted-foreground">
-                            Fees Due
-                          </p>
-                          <p className="text-base font-bold text-foreground leading-tight">
-                            NPR 12k
-                          </p>
-                          <p className="text-[10px] text-muted-foreground mt-0.5">
-                            6 students
-                          </p>
-                        </div>
+                        {[
+                          { icon: Users, label: "Students" },
+                          { icon: Receipt, label: "Fees" },
+                          { icon: UtensilsCrossed, label: "Meals" },
+                        ].map((item) => (
+                          <div
+                            key={item.label}
+                            className="bg-card/80 backdrop-blur rounded-2xl border border-border/60 shadow-sm p-3 flex flex-col items-center gap-2"
+                          >
+                            <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
+                              <item.icon className="w-4 h-4 text-primary" />
+                            </div>
+                            <span className="text-[11px] font-semibold text-foreground">
+                              {item.label}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
-                    {/* Meal schedule card */}
+                    {/* Overview card with progress + cleaner KPIs */}
                     <div className="px-6 mt-3.5">
-                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3.5">
+                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-4">
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/15">
-                              <span className="text-sm">🍛</span>
-                            </div>
-                            <div>
-                              <p className="text-xs font-bold text-foreground leading-tight">
-                                Today’s Meals
-                              </p>
-                              <p className="text-[11px] text-muted-foreground">
-                                Breakfast • Lunch • Dinner
-                              </p>
-                            </div>
-                          </div>
+                          <p className="text-xs font-extrabold text-foreground">
+                            Today’s Overview
+                          </p>
                           <span className="text-[11px] font-semibold text-primary">
                             View
                           </span>
                         </div>
 
-                        <div className="mt-3 grid grid-cols-3 gap-2">
-                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+                        <div className="mt-3 grid grid-cols-2 gap-3">
+                          <div className="rounded-2xl bg-secondary/60 border border-border/40 p-3">
                             <p className="text-[10px] font-semibold text-muted-foreground">
-                              Breakfast
+                              Occupancy
                             </p>
-                            <p className="text-[11px] font-bold text-foreground mt-0.5">
-                              7:30 AM
+                            <p className="text-base font-extrabold text-foreground leading-tight">
+                              48/50
+                            </p>
+                            <div className="mt-2 h-1.5 rounded-full bg-border/60 overflow-hidden">
+                              <div className="h-full w-[96%] bg-primary rounded-full" />
+                            </div>
+                          </div>
+
+                          <div className="rounded-2xl bg-secondary/60 border border-border/40 p-3">
+                            <p className="text-[10px] font-semibold text-muted-foreground">
+                              Fees Due
+                            </p>
+                            <p className="text-base font-extrabold text-foreground leading-tight">
+                              NPR 12k
+                            </p>
+                            <p className="text-[10px] text-muted-foreground mt-0.5">
+                              6 students pending
                             </p>
                           </div>
-                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+
+                          <div className="rounded-2xl bg-secondary/60 border border-border/40 p-3">
                             <p className="text-[10px] font-semibold text-muted-foreground">
-                              Lunch
+                              Outpass
                             </p>
-                            <p className="text-[11px] font-bold text-foreground mt-0.5">
-                              12:30 PM
+                            <p className="text-base font-extrabold text-foreground leading-tight">
+                              3
+                            </p>
+                            <p className="text-[10px] text-muted-foreground mt-0.5">
+                              1 awaiting review
                             </p>
                           </div>
-                          <div className="rounded-xl bg-secondary/60 border border-border/40 p-2">
+
+                          <div className="rounded-2xl bg-secondary/60 border border-border/40 p-3">
                             <p className="text-[10px] font-semibold text-muted-foreground">
-                              Dinner
+                              Announcements
                             </p>
-                            <p className="text-[11px] font-bold text-foreground mt-0.5">
-                              7:30 PM
+                            <p className="text-base font-extrabold text-foreground leading-tight">
+                              2
+                            </p>
+                            <p className="text-[10px] text-muted-foreground mt-0.5">
+                              sent today
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Recent activity */}
-                    <div className="px-6 mt-3.5 mb-6">
-                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-3.5">
+                    {/* Meals card (more visual hierarchy) */}
+                    <div className="px-6 mt-3.5">
+                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-4">
                         <div className="flex items-center justify-between">
-                          <p className="text-xs font-bold text-foreground">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center">
+                              <UtensilsCrossed className="w-4 h-4 text-primary" />
+                            </div>
+                            <div className="leading-tight">
+                              <p className="text-xs font-extrabold text-foreground">
+                                Today’s Meals
+                              </p>
+                              <p className="text-[11px] text-muted-foreground">
+                                Schedule & attendance
+                              </p>
+                            </div>
+                          </div>
+                          <span className="text-[11px] font-semibold text-primary">
+                            Manage
+                          </span>
+                        </div>
+
+                        <div className="mt-3 grid grid-cols-3 gap-2">
+                          {[
+                            { label: "Breakfast", time: "7:30" },
+                            { label: "Lunch", time: "12:30" },
+                            { label: "Dinner", time: "7:30" },
+                          ].map((m) => (
+                            <div
+                              key={m.label}
+                              className="rounded-2xl bg-secondary/60 border border-border/40 p-2.5"
+                            >
+                              <p className="text-[10px] font-semibold text-muted-foreground">
+                                {m.label}
+                              </p>
+                              <p className="text-[11px] font-extrabold text-foreground mt-0.5">
+                                {m.time}{" "}
+                                <span className="text-[10px] font-semibold text-muted-foreground">
+                                  {m.label === "Lunch" ? "PM" : "AM"}
+                                </span>
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Recent activity (cleaner, more “app” feel) */}
+                    <div className="px-6 mt-3.5 mb-5">
+                      <div className="bg-card rounded-2xl border border-border/60 shadow-sm p-4">
+                        <div className="flex items-center justify-between">
+                          <p className="text-xs font-extrabold text-foreground">
                             Recent Activity
                           </p>
                           <span className="text-[11px] font-semibold text-muted-foreground">
@@ -256,37 +334,37 @@ const Hero = () => {
                           </span>
                         </div>
 
-                        <div className="mt-3 space-y-2.5">
-                          <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
-                              <span className="text-sm">🚪</span>
+                        <div className="mt-3 space-y-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center">
+                              <ClipboardList className="w-4 h-4 text-primary" />
                             </div>
-                            <div className="flex-1">
-                              <p className="text-[11px] font-semibold text-foreground leading-tight">
+                            <div className="flex-1 leading-tight">
+                              <p className="text-[11px] font-semibold text-foreground">
                                 Outpass approved
                               </p>
                               <p className="text-[10px] text-muted-foreground">
                                 Rm 203 • Sagar • 5 min ago
                               </p>
                             </div>
-                            <span className="text-[10px] font-semibold text-primary">
+                            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/15">
                               Done
                             </span>
                           </div>
 
-                          <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-xl bg-secondary/70 border border-border/50 flex items-center justify-center">
-                              <span className="text-sm">📢</span>
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-2xl bg-secondary/70 border border-border/50 flex items-center justify-center">
+                              <Receipt className="w-4 h-4 text-foreground" />
                             </div>
-                            <div className="flex-1">
-                              <p className="text-[11px] font-semibold text-foreground leading-tight">
-                                Announcement posted
+                            <div className="flex-1 leading-tight">
+                              <p className="text-[11px] font-semibold text-foreground">
+                                Fee payment recorded
                               </p>
                               <p className="text-[10px] text-muted-foreground">
-                                “Fees due by 10th” • 22 min ago
+                                NPR 3,000 • Rm 105 • 18 min ago
                               </p>
                             </div>
-                            <span className="text-[10px] font-semibold text-muted-foreground">
+                            <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-card/70 border border-border/60 text-muted-foreground">
                               New
                             </span>
                           </div>
@@ -294,83 +372,82 @@ const Hero = () => {
                       </div>
                     </div>
 
-                    {/* Bottom nav */}
-                    <div className="px-6 pb-5">
+                    {/* Bottom nav (icons instead of emojis) */}
+                    <div className="px-6 pb-5 mt-auto">
                       <div className="bg-card/80 backdrop-blur border border-border/60 rounded-2xl shadow-sm px-4 py-3 flex items-center justify-between">
-                        <div className="flex flex-col items-center gap-1 text-primary">
-                          <span className="text-sm">🏠</span>
-                          <span className="text-[10px] font-semibold">
-                            Home
-                          </span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
-                          <span className="text-sm">🧾</span>
-                          <span className="text-[10px] font-semibold">
-                            Fees
-                          </span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
-                          <span className="text-sm">🍽️</span>
-                          <span className="text-[10px] font-semibold">
-                            Meals
-                          </span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1 text-muted-foreground">
-                          <span className="text-sm">🛎️</span>
-                          <span className="text-[10px] font-semibold">
-                            Outpass
-                          </span>
-                        </div>
+                        {[
+                          { icon: Home, label: "Home", active: true },
+                          { icon: Receipt, label: "Fees" },
+                          { icon: UtensilsCrossed, label: "Meals" },
+                          { icon: ClipboardList, label: "Outpass" },
+                        ].map((item) => (
+                          <div
+                            key={item.label}
+                            className={`flex flex-col items-center gap-1 ${
+                              item.active
+                                ? "text-primary"
+                                : "text-muted-foreground"
+                            }`}
+                          >
+                            <item.icon className="w-4 h-4" />
+                            <span className="text-[10px] font-semibold">
+                              {item.label}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
+
+                    {/* Subtle top sheen */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-40" />
+                  </div>
+
+                  {/* Dynamic island */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-foreground rounded-full flex items-center justify-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
+                    <div className="w-3 h-3 rounded-full bg-muted-foreground/30" />
                   </div>
                 </div>
 
-                {/* Dynamic island */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-foreground rounded-full flex items-center justify-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
-                  <div className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-                </div>
+                {/* Floating elements (keep yours) */}
+                <motion.div
+                  animate={{ y: [-5, 5, -5], rotate: [-2, 2, -2] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -left-8 top-1/4 w-16 h-16 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
+                >
+                  <span className="text-2xl">🔔</span>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [5, -5, 5], rotate: [2, -2, 2] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5,
+                  }}
+                  className="absolute -right-6 top-1/3 w-14 h-14 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
+                >
+                  <span className="text-xl">💰</span>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [-3, 7, -3], rotate: [-1, 3, -1] }}
+                  transition={{
+                    duration: 4.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                  className="absolute -right-4 bottom-1/4 w-12 h-12 bg-card rounded-xl shadow-lg flex items-center justify-center border border-border/50"
+                >
+                  <span className="text-lg">🏠</span>
+                </motion.div>
               </div>
-
-              {/* Floating elements (keep yours) */}
-              <motion.div
-                animate={{ y: [-5, 5, -5], rotate: [-2, 2, -2] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -left-8 top-1/4 w-16 h-16 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
-              >
-                <span className="text-2xl">🔔</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [5, -5, 5], rotate: [2, -2, 2] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute -right-6 top-1/3 w-14 h-14 bg-card rounded-2xl shadow-xl flex items-center justify-center border border-border/50"
-              >
-                <span className="text-xl">💰</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [-3, 7, -3], rotate: [-1, 3, -1] }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className="absolute -right-4 bottom-1/4 w-12 h-12 bg-card rounded-xl shadow-lg flex items-center justify-center border border-border/50"
-              >
-                <span className="text-lg">🏠</span>
-              </motion.div>
             </div>
           </motion.div>
         </div>
