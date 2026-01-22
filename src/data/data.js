@@ -181,7 +181,7 @@ export const testimonials = [
   {
     quote:
       "Hostel Orbit transformed how we manage our 200-bed facility. What used to take hours now takes minutes. The ROI was immediate.",
-    author: "Sunil Chettri",
+    author: "Rabin Khadka",
     role: "Hostel Owner",
     location: "Sinamangal",
     rating: 5,
@@ -190,7 +190,7 @@ export const testimonials = [
   {
     quote:
       "The outpass feature alone saved us countless hours. Students love the transparency and speed. Parents appreciate the updates too.",
-    author: "Bibek Paudel",
+    author: "Pujan Shrestha",
     role: "Warden",
     location: "Baneshwor",
     rating: 5,
@@ -199,7 +199,7 @@ export const testimonials = [
   {
     quote:
       "Finally, an app that understands hostel operations. Clean interface, powerful features, responsive support. Highly recommended.",
-    author: "Nripesh Baraghare",
+    author: "Mohan Adhikari",
     role: "Operations Manager",
     location: "Tinkune",
     rating: 5,
