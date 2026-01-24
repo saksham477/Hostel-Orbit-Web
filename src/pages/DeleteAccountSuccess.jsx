@@ -6,13 +6,22 @@ const DeleteAccountSuccess = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const allowed = sessionStorage.getItem("delete_allowed");
+    const params = new URLSearchParams(location.search);
+    const fromRedirect = params.get("delete_success") === "true";
+    const allowed = sessionStorage.getItem("delete_allowed") === "true";
 
-    // If user directly visits URL, block it
-    if (!allowed) {
+    // Allow only if came from form redirect OR session flag exists
+    if (!fromRedirect && !allowed) {
       navigate("/", { replace: true });
+      return;
     }
-  }, [navigate]);
+
+    // Clean the URL (remove query param if present)
+    if (fromRedirect) {
+      sessionStorage.setItem("delete_allowed", "true");
+      navigate("/delete-account-success", { replace: true });
+    }
+  }, [location, navigate]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center px-4">
@@ -42,7 +51,10 @@ const DeleteAccountSuccess = () => {
         </p>
 
         <button
-          onClick={() => navigate("/")}
+          onClick={() => {
+            sessionStorage.removeItem("delete_allowed");
+            navigate("/");
+          }}
           className="mt-6 w-full rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 transition"
         >
           Back to Home
