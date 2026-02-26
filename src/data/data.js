@@ -53,7 +53,7 @@ export const faqs = [
   {
     question: "How much does Hostel Orbit cost?",
     answer:
-      "Hostel Orbit includes a 1-month free plan (trial). After the free month, the subscription is NPR 6,000 per hostel per year as of the launch offer.",
+      "Hostel Orbit costs NPR 10,000 per hostel per year. For owners with multiple hostels, pricing is calculated per hostel, making it simple, clear, and easy to scale as your business grows.",
   },
   {
     question: "How long does it take to set up?",

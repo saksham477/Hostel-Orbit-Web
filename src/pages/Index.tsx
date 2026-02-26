@@ -8,9 +8,11 @@ import Features from "@/components/landing/Features";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Screenshots from "@/components/landing/Screenshots";
 import Benefits from "@/components/landing/Benefits";
+import Pricing from "@/components/landing/Pricing";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
+import FeedbackSection from "@/components/landing/FeedbackSection";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -35,8 +37,10 @@ const Index = () => {
         <Screenshots />
         <Benefits />
         <Testimonials />
+        <Pricing />
         <FAQ />
         <FinalCTA />
+        <FeedbackSection />
       </main>
       <Footer />
     </div>

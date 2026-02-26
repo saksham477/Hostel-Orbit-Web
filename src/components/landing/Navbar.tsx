@@ -7,6 +7,7 @@ const navLinks = [
   { label: "How it Works", href: "#how-it-works" },
   { label: "Screens", href: "#screens" },
   { label: "FAQ", href: "#faq" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -24,7 +25,7 @@ const Navbar = () => {
 
   const handleMobileNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
 

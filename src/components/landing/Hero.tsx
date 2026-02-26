@@ -73,7 +73,7 @@ const Hero = () => {
             >
               The all-in-one app for hostel owners, wardens, and students. Track
               expenses, manage rooms, send notifications, and handle outpass
-              requests—all from your phone.
+              requests all from your phone.
             </motion.p>
 
             {/* Download Buttons */}
