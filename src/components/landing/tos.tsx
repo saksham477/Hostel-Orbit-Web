@@ -114,7 +114,7 @@ const TermsOfService: React.FC = () => {
         <h2 className="text-xl font-semibold mb-2">11. Contact Us</h2>
         <p>
           If you have any questions, contact us at:{" "}
-          <span className="font-medium">[hostelorbit204.com]</span>
+          <span className="font-medium">[hostelorbit204@gmail.com]</span>
         </p>
       </section>
     </div>
