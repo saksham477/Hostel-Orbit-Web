@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import DeleteAccount from "./pages/DeleteAccount";
 import DeleteAccountSuccess from "./pages/DeleteAccountSuccess";
+import TermsOfService from "./components/landing/tos";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
             path="/delete-account-success"
             element={<DeleteAccountSuccess />}
           />
+          <Route path="/tos" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
