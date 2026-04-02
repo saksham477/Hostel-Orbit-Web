@@ -4,7 +4,7 @@ const TermsOfService: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
-      <p className="text-sm text-gray-500 mb-6">Last Updated: [Insert Date]</p>
+      <p className="text-sm text-gray-500 mb-6">Last Updated: [2026-04-01]</p>
 
       <p className="mb-6">
         Welcome to <strong>Hostel Orbit</strong>. These Terms of Service
@@ -114,7 +114,7 @@ const TermsOfService: React.FC = () => {
         <h2 className="text-xl font-semibold mb-2">11. Contact Us</h2>
         <p>
           If you have any questions, contact us at:{" "}
-          <span className="font-medium">[your-email@example.com]</span>
+          <span className="font-medium">[hostelorbit204.com]</span>
         </p>
       </section>
     </div>
