@@ -148,7 +148,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-background/10 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-background/40 text-sm">
-            © {new Date().getFullYear()} Hostel Orbit. All rights reserved.
+            © {new Date().getFullYear()} Orbit Solutions. All rights reserved.
           </p>
           <a
             href="https://bleedingtech.com.np"

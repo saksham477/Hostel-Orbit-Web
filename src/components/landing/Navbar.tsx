@@ -73,7 +73,10 @@ const Navbar = () => {
               className="w-10 h-10 rounded-xl object-contain shadow-md group-hover:shadow-lg transition-shadow duration-300"
             />
             <span className="font-bold text-lg text-foreground tracking-tight">
-              Hostel Orbit
+              Hostel Orbit.
+            </span>
+            <span className="text-[11px] text-muted-foreground tracking-wide">
+              A product of Orbit Solutions
             </span>
           </a>
 
